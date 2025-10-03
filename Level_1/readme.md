@@ -212,13 +212,14 @@
 ## :book: Importance of functional modeling of SoC before RTL and physical design stages
 
 ### :bulb: Functional modeling of SoC
- :zap: Usually `RVMYTH core` is `digital` circuit, `DAC` and `PLL` are `analog` IPs. 
- :zap: It is used for behavioral validation.
- :zap: Non-synthesizable , no hardware generated.
- :zap: Instruction execution is observed.
- :zap: High level programming language is used for behavioral modeling.
- :zap: Untimed behaviour.
- :zap: Abstract variable instead of registers.
+
+:zap: Usually `RVMYTH core` is `digital` circuit, `DAC` and `PLL` are `analog` IPs. 
+:zap: It is used for behavioral validation.
+:zap: Non-synthesizable , no hardware generated.
+:zap: Instruction execution is observed.
+:zap: High level programming language is used for behavioral modeling.
+:zap: Untimed behaviour.
+:zap: Abstract variable instead of registers.
 
 ---
 
