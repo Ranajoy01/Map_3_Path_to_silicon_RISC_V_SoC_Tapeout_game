@@ -38,9 +38,15 @@
    ```
    ![set_mod](images/set_mod.png)
 
-   :bulb: `vsdbabysoc.v`, `rvmyth.tlv`, 'avsddac.v', 'avsdpll.v', `testbench.v` are the required files for simulation.
+   :bulb: `vsdbabysoc.v`, `rvmyth.tlv`, `avsddac.v`, `avsdpll.v`, `testbench.v` are the required files for simulation.
 
    :bulb: This is our working directory.
+
+   :bulb: `.tlv` file is used for easy pipeline design, timing abstraction and transaction level modeling than the plain verilog.
+
+   :bulb: We can observe the pipelined design of `RVMYTH core` from `rvmyth.tlv` file using [https://makerchip.com/sandbox/#](https://makerchip.com/sandbox/#)
+
+   :warning: Here `rvmyth.tlv` can not be compiled using iverilog. 
 
   ### :microscope: Lab-2: Observe Cell definition, parameters
   :zap: Cell names can be seen using the following command-
