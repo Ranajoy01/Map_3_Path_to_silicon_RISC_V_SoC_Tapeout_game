@@ -94,7 +94,7 @@
 
   ![venv_4](images/venv_4.png)
 
-  :bulb: `rvmyth.v` and 'rvmyth_gen.v' files are generated after compilation.
+  :bulb: `rvmyth.v` and `rvmyth_gen.v` files are generated after compilation.
 
   <div align="center">:star::star::star::star::star::star:</div> 
      
