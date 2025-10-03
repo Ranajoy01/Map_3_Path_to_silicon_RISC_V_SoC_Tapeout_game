@@ -67,66 +67,73 @@
       - It has general fetch, decode, execute stages.
       - ALU (arithmetic and logic unit) operations, memory operations are performed by this.
         
-   - :zap: Graphics Processing unit (GPU) (Special unit):
+   - :zap: <mark>Graphics Processing unit (GPU) (Special unit):</mark>
       - Perform graphic rendering and parallel computing task.
       - Used for Virtual Games,images,videos.
         
-   - :zap: Digial Signal Processor (DSP) (Special unit):
+   - :zap: <mark>Digial Signal Processor (DSP) (Special unit):</mark>
       - Optimized processing of digital signals (audio, video, communications).
       - 
-   - :zap: AI/ML Accelerators (TPU) (Special unit):
+   - :zap: <mark>AI/ML Accelerators (TPU) (Special unit):</mark>
       - Optimized processing of neural networks and machine learning tasks.
         
 ---
 
 ### :bulb: Memory Units
  Nowdays, Havard architecture is preferred, where program/instruction memory and data memory are different to avoid overwrite issue.
-   - :zap: On-chip SRAM (Static random access memory):
+   - :zap: <mark>On-chip SRAM (Static random access memory):</mark>
      - Used for cache.
      
-   - :zap: ROM (Read only memory):
+   - :zap: <mark>ROM (Read only memory):
       - For storing boot codes.
       
-   - :zap: DRAM controller:
+   - :zap: <mark>DRAM controller:</mark>
       - Interface with external dynamic random access memory.
       - 
-   - :zap: Flash/NVM controller:
+   - :zap: <mark>Flash/NVM controller:</mark>
       - For program and data storage.
 ---
 
 ### :bulb: Peripheral interface Units
+ Digital to analog converter (DAC) and Analog to Digital converter (ADC) are used for interfacing.
  
-   - :zap: I/O interfaces:
+   - :zap: <mark>I/O interfaces:</mark>
      - Universal serial Bus (USB).
      - Peripheral component interface express (PCIe).
      - HDMI,MIPI (Camera/display).
      - Universal Asynchronous  receiver and transmitter
-   - :zap: Storage interface:
+   - :zap: <mark>Storage interface:</mark>
       - eMMC, UFS, SD card.
       
-   - :zap: Serial interface:
+   - :zap: <mark>Serial interface:</mark>
       - Serial peripheral interface (SPI).
       - Controller area network (CAN).
       - Inter integrated circuit (I2C).
       - 
-   - :zap: Flash/NVM controller:
+   - :zap: <mark>Flash/NVM controller:</mark>
       - For program and data storage.
 
-    - :zap: GPIOs:
+    - :zap: <mark>GPIOs:</mark>
       - General purpose input output interface for control and signals.
 
 ---
 
-### :bulb: Interconnect and Communication Units
+### :bulb: Power and Synchronization management Units
  
-   - :zap: Bus/Network on chip:
-     - Advanced extensible interface (AXI) to connect processor, memory, interface blocks.
-     - Advanced high performance bus (AHB) to connect different cores.
+   - :zap: <mark>Power Management:</mark>
+     - Buried rail power supply in transistor level is used to provide efficient power transfer line.
+     - Clock gating is used for preventing leakege power loss.
+     - Voltage regulation and level shifting are used for different block operating in different power supply.
+     - Nowdays dynamic power control is used.
      
-   - :zap: Direct memory access controller (DMA):
-      - Enable high speed data transfer between memories without CPU supervision.
+   - :zap: <mark>Synchronization management:</mark>
+      - Generally sequential logic is used. So,clock is very important.
+      - Clock source (Crystal oscillator) used to generate clock.
+      - Clock Global buffer used for synchronization in different location.
+      - PLL is used to generate stable higher frequencies from source clock.
+      - Divider is used to generate lower frequencies from source clock.
 
-   - :zap: Cache coherency logic:
+   - :zap: <mark>Cache coherency logic:</mark>
       - Ensures data consistency across multiple cores.
 
       
