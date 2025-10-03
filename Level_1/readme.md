@@ -15,9 +15,11 @@
 ## :book: Introduction to System on Chip (SoC) 
 
 ### :bulb: Computer system overview
+
   :zap: Any computing system has some basic functions and some specialized functions.
-      - `Basic functions` are processing , storage, Synchronization managemnet (clock), peripheral interface management , power management.
-      - `Specialized functions` communication interface, secure data management, image/video/audio processing.
+  
+   - `Basic functions` are processing , storage, Synchronization managemnet (clock), peripheral interface management , power management.
+   - `Specialized functions` communication interface, secure data management, image/video/audio processing.
 
   :zap: Generally for high performance computing (Desktop computer) different chips or different hardware blocks are separate entities, these are connected together through wires.
   
