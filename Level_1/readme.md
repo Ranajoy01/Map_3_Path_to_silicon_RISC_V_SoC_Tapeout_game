@@ -89,78 +89,79 @@
 ## :book: Components of typical SoC
 
 ### :bulb: Processing Units
-   - :zap: <mark>Central Processing Unit (CPU) (Basic unit):</mark>
+   :zap: <mark>Central Processing Unit (CPU) (Basic unit):</mark>
       - Usually it is a general purpose processor.
       - It has general fetch, decode, execute stages.
       - ALU (arithmetic and logic unit) operations, memory operations are performed by this.
         
-   - :zap: <mark>Graphics Processing unit (GPU) (Special unit):</mark>
+   :zap: <mark>Graphics Processing unit (GPU) (Special unit):</mark>
       - Perform graphic rendering and parallel computing task.
       - Used for Virtual Games,images,videos.
         
-   - :zap: <mark>Digial Signal Processor (DSP) (Special unit):</mark>
+   :zap: <mark>Digial Signal Processor (DSP) (Special unit):</mark>
       - Optimized processing of digital signals (audio, video, communications).
       - 
-   - :zap: <mark>AI/ML Accelerators (TPU) (Special unit):</mark>
+   :zap: <mark>AI/ML Accelerators (TPU) (Special unit):</mark>
       - Optimized processing of neural networks and machine learning tasks.
         
 ---
 
 ### :bulb: Memory Units
  Nowdays, Havard architecture is preferred, where program/instruction memory and data memory are different to avoid overwrite issue.
-   - :zap: <mark>On-chip SRAM (Static random access memory):</mark>
+   :zap: <mark>On-chip SRAM (Static random access memory):</mark>
      - Used for cache.
      
-   - :zap: <mark>ROM (Read only memory):
+   :zap: <mark>ROM (Read only memory):
       - For storing boot codes.
       
-   - :zap: <mark>DRAM controller:</mark>
+   :zap: <mark>DRAM controller:</mark>
       - Interface with external dynamic random access memory.
-      - 
-   - :zap: <mark>Flash/NVM controller:</mark>
+
+   :zap: <mark>Flash/NVM controller:</mark>
       - For program and data storage.
+      
 ---
 
 ### :bulb: Peripheral interface Units
  Digital to analog converter (DAC) and Analog to Digital converter (ADC) are used for interfacing.
  
-   - :zap: <mark>I/O interfaces:</mark>
+    :zap: <mark>I/O interfaces:</mark>
      - Universal serial Bus (USB).
      - Peripheral component interface express (PCIe).
      - HDMI,MIPI (Camera/display).
      - Universal Asynchronous  receiver and transmitter
-   - :zap: <mark>Storage interface:</mark>
+    :zap: <mark>Storage interface:</mark>
       - eMMC, UFS, SD card.
       
-   - :zap: <mark>Serial interface:</mark>
+    :zap: <mark>Serial interface:</mark>
       - Serial peripheral interface (SPI).
       - Controller area network (CAN).
       - Inter integrated circuit (I2C).
       - 
-   - :zap: <mark>Flash/NVM controller:</mark>
+    :zap: <mark>Flash/NVM controller:</mark>
       - For program and data storage.
 
-   - :zap: <mark>GPIOs:</mark>
+    :zap: <mark>GPIOs:</mark>
       - General purpose input output interface for control and signals.
 
 ---
 
 ### :bulb: Power and Synchronization management Units
  
-   - :zap: <mark>Power Management:</mark>
+    :zap: <mark>Power Management:</mark>
      - Buried rail power supply in transistor level is used to provide efficient power transfer line.
      - Clock gating is used for preventing leakege power loss.
      - Voltage regulation and level shifting are used for different block operating in different power supply.
      - Nowdays dynamic power control is used.
      
-   - :zap: <mark>Synchronization management:</mark>
+    :zap: <mark>Synchronization management:</mark>
       - Generally sequential logic is used. So,clock is very important.
       - Clock source (Crystal oscillator) used to generate clock.
       - Clock Global buffer used for synchronization in different location.
       - PLL is used to generate stable higher frequencies from source clock.
       - Divider is used to generate lower frequencies from source clock.
 
-   - :zap: <mark>Cache coherency logic:</mark>
+   :zap: <mark>Cache coherency logic:</mark>
       - Ensures data consistency across multiple cores.
 
       
@@ -169,7 +170,7 @@
 ## :book: Intoduction to BabySoC : a simplified model of SoC
 
 ### :bulb: BabySoC outline
-   - :zap: BabySoC is integration of a `RVMYTH core` , a 10 bit DAC unit and a Phase locked loop (PLL).
+   :zap: BabySoC is integration of a `RVMYTH core` , a 10 bit DAC unit and a Phase locked loop (PLL).
       - `RVMYTH  core` is the CPU designed with RISC-V 32 bit integer Base Instruction Set Architecture (ISA).
       - A 10 bit DAC is used to convert 10 bit output to analog signal fro external interface.
       - A PLL is used for stable and accurate high frequency `CLK` generation from source clock.
