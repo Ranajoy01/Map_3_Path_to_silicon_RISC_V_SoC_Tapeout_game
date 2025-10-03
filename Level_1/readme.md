@@ -107,7 +107,9 @@
 ---
 
 ### :bulb: Memory Units
+
  Nowdays, Havard architecture is preferred, where program/instruction memory and data memory are different to avoid overwrite issue.
+ 
    :zap: <mark>On-chip SRAM (Static random access memory):</mark>
      - Used for cache.
      
@@ -123,6 +125,7 @@
 ---
 
 ### :bulb: Peripheral interface Units
+
  Digital to analog converter (DAC) and Analog to Digital converter (ADC) are used for interfacing.
  
     :zap: <mark>I/O interfaces:</mark>
@@ -149,13 +152,15 @@
 
 ### :bulb: Power and Synchronization management Units
  
-    :zap: <mark>Power Management:</mark>
+  :zap: <mark>Power Management:</mark>
+  
      - Buried rail power supply in transistor level is used to provide efficient power transfer line.
      - Clock gating is used for preventing leakege power loss.
      - Voltage regulation and level shifting are used for different block operating in different power supply.
      - Nowdays dynamic power control is used.
      
-    :zap: <mark>Synchronization management:</mark>
+  :zap: <mark>Synchronization management:</mark>
+  
       - Generally sequential logic is used. So,clock is very important.
       - Clock source (Crystal oscillator) used to generate clock.
       - Clock Global buffer used for synchronization in different location.
@@ -163,6 +168,7 @@
       - Divider is used to generate lower frequencies from source clock.
 
    :zap: <mark>Cache coherency logic:</mark>
+   
       - Ensures data consistency across multiple cores.
 
       
