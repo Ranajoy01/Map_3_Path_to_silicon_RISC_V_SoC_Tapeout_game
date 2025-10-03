@@ -183,7 +183,8 @@
 ### :bulb: It is a very good reference against RTL and Physical design verification.
 
 ### :bulb: Why Functional modeling before physical design
-    :zap: Physical design is very complex and time consuming task. To get required functionality and less error, functional modeling is used before physical design.
+
+ :zap: Physical design is very complex and time consuming task. To get required functionality and less error, functional modeling is used before physical design.
 
     <div align="center">:star::star::star::star::star::star:</div> 
 ## :trophy: Level Status: 
