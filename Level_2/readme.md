@@ -86,7 +86,7 @@
   ```
   $ cd ../VSDBabySoC/src/module
   ```
-  Convert `rvmyth.tlv` to `rvmyth.v`-
+  :zap: Convert `rvmyth.tlv` to `rvmyth.v`-
   
    ```
    $ sandpiper-saas -i rvmyth.tlv -o rvmyth.v
