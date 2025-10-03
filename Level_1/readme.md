@@ -2,11 +2,16 @@
 
 ## List of Objectives
 
-- :book: <b>Learning Objective-1:</b> []()
-- :book: <b>Learning Objective-2:</b> []()
-- :book: <b>Learning Objective-3:</b> []()
-- :book: <b>Learning Objective-4:</b> []()
-- :book: <b>Learning Objective-5:</b> []()
+- :book: <b>Learning Objective-1:</b> [Introduction to System on Chip (SoC)](#book-introduction-to-system-on-chip-soc
+)
+- :book: <b>Learning Objective-2:</b> [Instruction Set Architecure (ISA)
+](#book-instruction-set-architecure-isa)
+- :book: <b>Learning Objective-3:</b> [Components of typical SoC
+](#book-components-of-typical-soc)
+- :book: <b>Learning Objective-4:</b> [Intoduction to BabySoC : a simplified model of SoC
+](#book-intoduction-to-babysoc--a-simplified-model-of-soc)
+- :book: <b>Learning Objective-5:</b> [Importance of functional modeling of SoC before RTL and physical design stages
+](#book-importance-of-functional-modeling-of-soc-before-rtl-and-physical-design-stages)
 
 
 
