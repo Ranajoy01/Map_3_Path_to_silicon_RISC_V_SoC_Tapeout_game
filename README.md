@@ -9,8 +9,8 @@
 
 :rocket: Welcome to the <b>`Map-3(Week-2): SoC Fundamentals, observation of BabySoC structure and simulation` </b> gameplay report of the <b> RISC-V SoC Tapeout EdTech Game </b> :video_game:. This map is divided into two levels-
 
--  Level-1: Theoratical understanding of SoC and basic outline of BabySoC.
--  Level-2: Practical understanding of BabySoC structure and simulation results.
+-  <b>Level-1:</b> :book: Theoratical understanding of SoC and basic outline of BabySoC.
+-  <b>Level-2:</b> :dart: Practical understanding of BabySoC structure and simulation results.
 
 <div align="center">:star::star::star::star::star::star:</div>
 
@@ -42,4 +42,3 @@
   
   <div align="center">:star::star::star::star::star::star:</div>
 
-<div align="center">:star::star::star::star::star::star:</div>
