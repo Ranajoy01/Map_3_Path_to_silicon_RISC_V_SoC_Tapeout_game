@@ -9,10 +9,13 @@
 
  <div align="center">:star::star::star::star::star::star:</div> 
  
-## :dart: Lab for introduction to timing.lib
- ### :microscope: Lab-1: Open the library file , significance of the filename.
+## :microscope: Setup the directory `VSDBabySoC`
    
-   :zap: Open the `.lib` file using text editor-
+   :zap: Open terminal and clone the project directory-
+
+   ```
+    
+   ```
      
    ```
    $ gvim sky130_fd_sc_hd__tt_025C_1v80.lib
