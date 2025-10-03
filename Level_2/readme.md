@@ -46,6 +46,8 @@
 
    :bulb: We can observe the pipelined design of `RVMYTH core` from `rvmyth.tlv` file using [https://makerchip.com/sandbox/#](https://makerchip.com/sandbox/#)
 
+   ![set_tlv](images/set_tlv.png)
+   
    :warning: Here `rvmyth.tlv` can not be compiled using iverilog. 
 
   ### :microscope: Lab-2: Observe Cell definition, parameters
