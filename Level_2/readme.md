@@ -14,13 +14,18 @@
    :zap: Open terminal and clone the project directory-
 
    ```
-    
+   $ git clone https://github.com/manili/VSDBabySoC.git
+
    ```
+   ![set_clone](images/set_clone.png)
      
+   :zap: Go to working directory-
+   
    ```
-   $ gvim sky130_fd_sc_hd__tt_025C_1v80.lib
+   $ cd VSDBabySoC/src/module
+
    ```
-   ![lib_vim_1](images/lib_vim_1.png)
+   ![set_clone](images/set_clone.png)
    
    :zap: Go to the command line mode in gvim text editor by pressing `:` -
 
