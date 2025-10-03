@@ -250,6 +250,6 @@
 
 - All objectives completed.
 - I have learned fundamental theories of SoC and BabySoc outline.
-- 🔓 Next level unlocked 🔜 [Level-2(Day-2): Practical understanding of BabySoC structure and simulation results](../Level_2/readme.md).
+- 🔓 Next level unlocked 🔜 [Level-2: Practical understanding of BabySoC structure and simulation results](../Level_2/readme.md).
 
 
