@@ -1,39 +1,46 @@
-# Level-1: Introduction to Verilog RTL design and Synthesis
+# Level-1: Theoratical understanding of SoC and basic outline of BabySoC
 
 ## List of Objectives
 
-- :book: <b>Learning Objective-1:</b> [Introduction to iverilog simulaor](#book-Introduction-to-iverilog-simulator)
-- :dart: <b>Practiccal Objective-1:</b> [Lab using iverilog and gtkwave](#dart-Lab-using-iverilog-and-gtkwave)
-   - :microscope: <b>Lab-1:</b> [Clone SKY130 open source process design kit(PDK) on Ubuntu VM as test file library](#microscope-lab-1-clone-sky130-open-source-process-design-kitpdk-on-ubuntu-vm-as-test-file-library)
-   - :microscope: <b>Lab-2:</b> [ Simulate a RTL design using iverilog](#microscope-lab-2-simulate-a-rtl-design-using-iverilog-test-design-21-mux-verilog-file-named-as-good_muxv)
-   - :microscope: <b>Lab-3:</b> [ Read and edit (editing process only) verilog file using text editor](#microscope-lab-3-read-and-edit-editing-process-only-verilog-file-using-text-editor-observe-the-verilog-code-syntax-for-test-design-21-mux-verilog-file-named-as-good_muxv)
-- :book: <b>Learning Objective-2:</b> [Introduction to Yosys and Logic synthesis](#book-Introduction-to-Yosys-and-Logic-synthesis)
-- :dart: <b>Practical Objective-2:</b> [Labs using Yosys and SKY130 PDK](#dart-lab-using-yosys-and-sky130-pdk)
-    - :microscope: <b>Lab-4:</b> [Synthesize a design using Yosys and SKY130 PDK (Test design: 2:1 MUX (Verilog file named as "good_mux.v"))](#microscope-lab-4-synthesize-a-design-using-yosys-and-sky130-pdk-test-design-21-mux-verilog-file-named-as-good_muxv)
+- :book: <b>Learning Objective-1:</b> []()
+- :book: <b>Learning Objective-2:</b> []()
+- :book: <b>Learning Objective-3:</b> []()
+- :book: <b>Learning Objective-4:</b> []()
+- :book: <b>Learning Objective-5:</b> []()
+
+
 
  <div align="center">:star::star::star::star::star::star:</div> 
  
-## :book: Introduction to iverilog simulator
+## :book: Introduction to System on Chip (SoC) 
 
-### :bulb: Simulator
-   - RTL design is checked for matching with the specification by simulating the design.
-   - The tool used for `simulating the design` is known as `simulator`.
-   - `Icarus Verilog (iverilog)` is an example of simulator.
+### :bulb: Computer system overview
+   - :zap: Any computing system has some basic functions and some specialized functions.
+      - `Basic functions` are processing , storage, Synchronization managemnet (clock), peripheral interface management , power management.
+      - `Specialized functions` communication interface, secure data management, image/video/audio processing.
+
+   - :zap: Generally for high performance computing (Desktop computer) different chips or different hardware blocks are separate entities, these are connected together through wires.
+---
+
+### :bulb: System on Chip (SoC) overview
+    Here, most or all components of a `computer system`  are integrated into a `single chip`.Basic SoC is made by integating processor, memory, peripheral interface, clock management, power management block onto a silicon die. Others hardware blocks can be integrated into the chip for specialized function. It is used to improve performance, reduce power consumption and physical space. 
  
 ---
-### :bulb: Design
-   - Design is the actual verilog code or set of verilog codes which has the intended functionality to meet with the required specification.
-   - Written in hardware description language (HDL) like Verilog.
-   - Functional verification is used to validate the RTL design.
+### :white_check_mark: SoC advantages
+   - Reduce requirements of external ICs.
+   - Smaller physical size and compact design.
+   - Power efficient.
+   - On chip communcation and less signal delay produce higher performance.
+   - Cost effective as high-volume manufacturing lowers the cost.
+   - Optimized for specific application.
 ---
-### :bulb: Testbench
-   - Testbench is the setup to apply stimulus `(test_vectors)` to the design to check its functionality.
-   - It is the integration the `Design`, `Stimulus generator`, `Stimulus observer`.
-   - `Stimulus generator` give `primary inputs` to the design under test (DUT).
-   - `Stimulus observer` take `primary outputs` from the design under test (DUT).
-   - Testbench has no primary inputs or outputs.
+### :warning: SoC disadvantages
+   - Design become very complex.
+   - Heat Dissipation issue is a very big problem in SoC.
+   - Different `level of power supplies` to different hardware blocks is problematic.
+   - No upgradability.
 ---
-### :bulb: How Simulator Works
+### :bulb: SoC application
    - Simulator looks for the changes in input values.
    - Output is evaluated based on the change of input `(if no change in input, no change in output)`.
      
