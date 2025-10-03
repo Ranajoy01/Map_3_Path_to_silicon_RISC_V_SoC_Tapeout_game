@@ -19,36 +19,29 @@
    ```
    ![set_clone](images/set_clone.png)
      
-   :zap: Go to working directory-
+   :zap: Go to `src` directory and observe the nested directory -
    
    ```
-   $ cd VSDBabySoC/src/module
+   $ cd VSDBabySoC/src
+   $ ls
 
    ```
-   ![set_clone](images/set_clone.png)
+   ![set_src](images/set_src.png)
    
-   :zap: Go to the command line mode in gvim text editor by pressing `:` -
+   :bulb: `include` (header files) and `module` (design files) directories have the required files for `babysoc` simulation.
+   
+   :zap: Go to the `module` directory-
 
-   - Syntax off-
    ```
-    :syn off
+   $ cd module
+   $ ls
    ```
-   - Line numbers-
-   ```
-    :se nu
-   ```
-   ![lib_vim_2](images/lib_vim_2.png)
-   
-   :zap: Significance of the filename-
+   ![set_mod](images/set_mod.png)
 
-   - Based on process, voltage and temperature variation cell performance changes.
-   - The performance of cells in `.lib` file are generalized in certain values of these three parameters.
-   - We can observe the parameters in the name of `.lib` file.
-   -  For the `sky130_fd_sc_hd__tt_025C_1v80.lib` file-
-      - Process: `tt` (Typical pocess).
-      - Voltage: `1v80` (1.80 V).
-      - Temparature: `025C` (25 degree celcius).
-   
+   :bulb: `vsdbabysoc.v`, `rvmyth.tlv`, 'avsddac.v', 'avsdpll.v', `testbench.v` are the required files for simulation.
+
+   :bulb: This is our working directory.
+
   ### :microscope: Lab-2: Observe Cell definition, parameters
   :zap: Cell names can be seen using the following command-
    ```
