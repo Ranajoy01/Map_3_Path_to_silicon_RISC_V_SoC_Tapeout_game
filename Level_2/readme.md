@@ -96,7 +96,7 @@
 
   :bulb: `rvmyth.v` and `rvmyth_gen.v` files are generated after compilation.
 
-  :warning: Comment out the lines like ``line 2 "rvmyth.tlv" 0 ` in `rvmyth.v` file to prevent compile time error.
+  :warning: Comment out the lines like <mark> `line 2 "rvmyth.tlv" 0 </mark> in `rvmyth.v` file to prevent compile time error.
 
   <div align="center">:star::star::star::star::star::star:</div> 
      
