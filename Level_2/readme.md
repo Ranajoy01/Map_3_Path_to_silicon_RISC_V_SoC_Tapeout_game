@@ -2,9 +2,9 @@
 
 ## List of Objectives
 
-- :microscope: <b>Practiccal Objective-1:</b> []()
-- :microscope: <b>Practiccal Objective-2:</b> []()
-- :microscope: <b>Practiccal Objective-3:</b> []()
+- :microscope: <b>Practical Objective-1:</b> []()
+- :microscope: <b>Practical Objective-2:</b> []()
+- :microscope: <b>Practical Objective-3:</b> []()
  
 
  <div align="center">:star::star::star::star::star::star:</div> 
