@@ -129,28 +129,28 @@
 
  Digital to analog converter (DAC) and Analog to Digital converter (ADC) are used for interfacing.
  
-    :zap: <mark>I/O interfaces:</mark>
-    
-     - Universal serial Bus (USB).
-     - Peripheral component interface express (PCIe).
-     - HDMI,MIPI (Camera/display).
-     - Universal Asynchronous  receiver and transmitter
-     
-    :zap: <mark>Storage interface:</mark>
-    
-      - eMMC, UFS, SD card.
-      
-    :zap: <mark>Serial interface:</mark>
-    
-      - Serial peripheral interface (SPI).
-      - Controller area network (CAN).
-      - Inter integrated circuit (I2C).
-      - 
-    :zap: <mark>Flash/NVM controller:</mark>
-      - For program and data storage.
+ :zap: <mark>I/O interfaces:</mark>
+ 
+  - Universal serial Bus (USB).
+  - Peripheral component interface express (PCIe).
+  - HDMI,MIPI (Camera/display).
+  - Universal Asynchronous  receiver and transmitter
+  
+ :zap: <mark>Storage interface:</mark>
+ 
+   - eMMC, UFS, SD card.
+   
+ :zap: <mark>Serial interface:</mark>
+ 
+   - Serial peripheral interface (SPI).
+   - Controller area network (CAN).
+   - Inter integrated circuit (I2C).
+   - 
+ :zap: <mark>Flash/NVM controller:</mark>
+   - For program and data storage.
 
-    :zap: <mark>GPIOs:</mark>
-      - General purpose input output interface for control and signals.
+ :zap: <mark>GPIOs:</mark>
+   - General purpose input output interface for control and signals.
 
 ---
 
@@ -183,9 +183,9 @@
 ### :bulb: BabySoC outline
    :zap: BabySoC is integration of a `RVMYTH core` , a 10 bit DAC unit and a Phase locked loop (PLL).
    
-      - `RVMYTH  core` is the CPU designed with RISC-V 32 bit integer Base Instruction Set Architecture (ISA).
-      - A 10 bit DAC is used to convert 10 bit output to analog signal fro external interface.
-      - A PLL is used for stable and accurate high frequency `CLK` generation from source clock.
+   - `RVMYTH  core` is the CPU designed with RISC-V 32 bit integer Base Instruction Set Architecture (ISA).
+   - A 10 bit DAC is used to convert 10 bit output to analog signal fro external interface.
+   - A PLL is used for stable and accurate high frequency `CLK` generation from source clock.
 
  ---
       
