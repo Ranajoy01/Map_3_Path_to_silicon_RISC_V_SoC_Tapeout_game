@@ -79,7 +79,7 @@
 
  :zap: ARM V7 ISA (Mobile device), AMD X86 ISA (Desktop computer).
 
-  :zap: RISC-V gives open source instruction set architecture. 
+  :zap: RISC-V gives open source instruction set architecture (RISC signifies reduced instruction set computer). 
 
  ![isa_des](Level_1/images/isa_des.png)
 
