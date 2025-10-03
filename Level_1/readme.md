@@ -23,7 +23,8 @@
 ---
 
 ### :bulb: System on Chip (SoC) overview
-    Here, most or all components of a `computer system`  are integrated into a `single chip`.Basic SoC is made by integating processor, memory, peripheral interface, clock management, power management block onto a silicon die. Others hardware blocks can be integrated into the chip for specialized function. It is used to improve performance, reduce power consumption and physical space. 
+
+  Here, most or all components of a `computer system`  are integrated into a `single chip`.Basic SoC is made by integating processor, memory, peripheral interface, clock management, power management block onto a silicon die. Others hardware blocks can be integrated into the chip for specialized function. It is used to improve performance, reduce power consumption and physical space. 
  
 ---
 ### :white_check_mark: SoC advantages
@@ -41,18 +42,17 @@
    - No upgradability.
 ---
 ### :bulb: SoC application
-   - Simulator looks for the changes in input values.
-   - Output is evaluated based on the change of input `(if no change in input, no change in output)`.
-     
-     ![testbench_img](images/tb_rv.png)  
+   - Smartphones: Qualcomm Snapdragon.
+   - Communication device: SoC in wifi router.
+   - Automobile: Car infotainment control.
+   - Industrial control systems.
+   - Aerospace and defense.
+   - Wearables and IoT systems: Smart watch, Amazon alexa.
+   - AI and Edge computing.
+   - Robotics.
+   - Consumer electronics: Smart TV.
+    
 ---
-### :bulb: Iverilog Based simulation flow
-   1. Design and testbench files are given to iverilog simulatior.
-   2. iverilog simulator generate .vcd file.
-   3. .vcd file is given to gtkwave.
-   4. gtkwave helps to visualize the input-output waveform (timing diagram).
-      
-   ![iverilog_flow](images/iv_sim_flow.png)
 
   <div align="center">:star::star::star::star::star::star:</div> 
 
