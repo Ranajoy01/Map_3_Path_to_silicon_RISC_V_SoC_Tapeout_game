@@ -100,50 +100,79 @@
 
   <div align="center">:star::star::star::star::star::star:</div> 
      
-  ### :microscope: Lab-3: Compare area,power of variants of same cell
-  :zap: We have opened three different flavours of same cell using line number-
-  ```
-  :36663
-  :vsp
-  :vsp
-  :36904
-  :37145
-  ```
-  ![cell_comp](images/cell_comp.png)
+ ### :microscope: Observe and analyze required verilog files in `module` directory-
   
-   :zap: Compare three cells-
+  :dart: Observe and analyze `vsdbabysoc.v` file-
+  
+  :zap: Observe-
+   
+   ```
+   $ gvim vsdbabysoc.v
+   : vsp
+   ```
+   ![ob_bs_1](images/ob_bs_1.png)
+   
+  :zap: Analyze-
+  
+   - It is the top module of SoC design.
+   - It has six input port-
+     - reset (for `rvmyth`)
+     - VCO_IN (for `pll`)
+     - ENb_CP (for `pll`)
+     - ENb_VCO (for `pll`)
+     - REF (for `pll`)
+     - VREFH (for `dac`)
+   - It has one output port-
+     - OUT (for `dac`)
+   - `CLK` is generated from `pll`
+   - `RV_TO_DAC` is 10 bit bus connecting wire from `rvmyth`.OUT to `dac`.D
+   - `rvmyth`, 'dac', 'pll' modules are instantiated and interconnected in the `vsdbabysoc` module.
+   - Here, `OUT` port of top module is of type `wire` which is connected to DAC_OUT.
+   - :warning: DAC_OUT is analog output (value can be `real`) but 'OUT' is declared as `wire` as 'real' is not synthesizable for digital logic circuit it is only for simulation.
 
-   - `and2_0`,`and2_1`,`and2_2` cells are opened.
-   - Area is increasing from `and2_0` to`and2_2`.
-   - Speed is increasing from `and2_0` to `and2_2`.
-   - Power is increasing from `and2_0` to `and2_2`.
+ ---
+
+:dart: Observe and analyze `rvmyth.v` file-
+  
+  :zap: Observe-
+   
+   ```
+   $ gvim rvmyth.v
+   ```
+   ![ob_rv_1](images/ob_rv_1.png)
+   
+  :zap: Analyze-
+  
+   - It is the top module of SoC design.
+   - It has two input port-
+     - reset 
+     - CLK
+   - It has one output port-
+     - OUT (10 bit bus)
+      
+   - `rvmyth_gen.v` included here to get the macro, wire, genvar and register declaration.
+   - Here, `OUT` 10 bit bus is of `reg` type.
+   - It has 6 pipeline stages-
+     - @0: Fetch
+     - @1: Decode
+     - @2: Register file read
+     - @3: Execute (ALU) and register file write
+     - @4: Data memory access validation
+     - @5: Data memory access
+   - The 10 bit `OUT` is produced from register 17 (r17) first 10 bits from LSB-
      
+     ```verilog
+      always @ (posedge CLK) begin
+         OUT = CPU_Xreg_value_a5[17];                
+      end
+     ```
+  
+ ---
+
+ 
+  
   <div align="center">:star::star::star::star::star::star:</div> 
  
-## :dart: Lab on Hierarchial vs Flatten synthesis
- ### :microscope: Lab-4: Hierarchial synthesis
-   
-  :zap: Synthesize `multiple_modules.v` as hierarchial-
-     
-   ```
-  $ read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
-  $ read_verilog multiple_modules.v
-  $ synth -top multiple_modules
-  ```
-  ![hier_synth_1](images/hier_synth_1.png)
-  
-  ```
-  $ abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
-  $ show
-  ```
-  ![hier_synth_2](images/hier_synth_2.png)
-
-  ```
-  $ write_verilog multiple_modules_net.v 
-  ```
-
-   ![hier_net_v](images/hier_net_v.png)
-   
    ### :microscope: Lab-5: Flat synthesis
    
   :zap: Synthesize `multiple_modules.v` as flatten-
