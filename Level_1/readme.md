@@ -113,7 +113,7 @@
    - :zap: <mark>Flash/NVM controller:</mark>
       - For program and data storage.
 
-    - :zap: <mark>GPIOs:</mark>
+   - :zap: <mark>GPIOs:</mark>
       - General purpose input output interface for control and signals.
 
 ---
