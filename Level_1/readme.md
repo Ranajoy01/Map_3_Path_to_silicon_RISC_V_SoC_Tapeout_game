@@ -161,15 +161,15 @@
   
   :zap: <mark>Synchronization management:</mark>
   
-      - Generally sequential logic is used. So,clock is very important.
-      - Clock source (Crystal oscillator) used to generate clock.
-      - Clock Global buffer used for synchronization in different location.
-      - PLL is used to generate stable higher frequencies from source clock.
-      - Divider is used to generate lower frequencies from source clock.
+  - Generally sequential logic is used. So,clock is very important.
+  - Clock source (Crystal oscillator) used to generate clock.
+  - Clock Global buffer used for synchronization in different location.
+  - PLL is used to generate stable higher frequencies from source clock.
+  - Divider is used to generate lower frequencies from source clock.
 
    :zap: <mark>Cache coherency logic:</mark>
    
-      - Ensures data consistency across multiple cores.
+  - Ensures data consistency across multiple cores.
 
       
    <div align="center">:star::star::star::star::star::star:</div> 
