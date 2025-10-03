@@ -181,12 +181,13 @@
   :zap: Compile the SoC design using iverilog-
    
    ```
-   $ iverilog -DPRE_SYNTH_SIM -I ../include testbench.v
+   $ iverilog -g2012 -DPRE_SYNTH_SIM -I ../include testbench.v
    ```
    :bulb: `-DPRE_SYNTH_SIM` is for pre synthesis simulation condition in `testbench.v`.
 
    :bulb: `-I` is used to include all header files in `include` directory.
 
+   :bulb: `-g2012` is used for system verilog.
    ![iv_bs_1](images/iv_bs_1.png)
 
    
