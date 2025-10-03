@@ -69,15 +69,19 @@
 
  :zap: It give the rules which combinations of N- bit for which instruction.(N word length)
 
- :zap: RISC-V gives open source instruction set architecture. 
+ :zap: ARM V7 ISA (Mobile device), AMD X86 ISA (Desktop computer).
 
- :zap: ARM X86, AMD X86.
+  :zap: RISC-V gives open source instruction set architecture. 
+
  
 
 ## :bulb: Importance of ISA
 
 :zap: If different procesing unit has different ISA designed by different companies then complexity increase.
 
+:zap: It is the low level interface of hardware-software. Compiler maps high level language instructions to these instructions.
+
+:zap: Open source ISA gives the oppurtunity to design different cores with the same ISA.It ease the design process.
 
  
 
@@ -168,7 +172,9 @@
    - :zap: BabySoC is integration of a `RVMYTH core` , a 10 bit DAC unit and a Phase locked loop (PLL).
       - `RVMYTH  core` is the CPU designed with RISC-V 32 bit integer Base Instruction Set Architecture (ISA).
       - A 10 bit DAC is used to convert 10 bit output to analog signal fro external interface.
-      - A PLL is used for stable and accurate high frequency `CLK` generation from source clock. 
+      - A PLL is used for stable and accurate high frequency `CLK` generation from source clock.
+
+ ---
       
 ### :bulb: Why simplified
 :zap: It has small instruction and data memory.
@@ -190,7 +196,7 @@
 
  <div align="center">:star::star::star::star::star::star:</div> 
  
-## :book: Importance of functional modeling of SoC befor RTL and physical design stages
+## :book: Importance of functional modeling of SoC before RTL and physical design stages
 
 ### :bulb: Functional modeling of SoC
  :zap: Usually `RVMYTH core` is `digital` circuit, `DAC` and `PLL` are `analog` IPs. 
@@ -201,9 +207,15 @@
  :zap: Untimed behaviour.
  :zap: Abstract variable instead of registers.
 
-### :bulb: Functional modeling provide faster simulation than RTL modeling.
+---
 
-### :bulb: It is a very good reference against RTL and Physical design verification.
+### :bulb: Functional modeling provide faster simulation than RTL modeling
+
+---
+
+### :bulb: It is a very good reference against RTL and Physical design verification
+
+---
 
 ### :bulb: Why Functional modeling before physical design
 
