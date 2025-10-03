@@ -59,6 +59,29 @@
 
   <div align="center">:star::star::star::star::star::star:</div> 
 
+## :book: Instruction Set Architecure (ISA)
+
+## :bulb: Introduction to ISA
+
+ :zap: ISA is a very important part of processor design. 
+ 
+ :zap: It is very crucial in hardware software interfacing. 
+
+ :zap: It give the rules which combinations of N- bit for which instruction.(N word length)
+
+ :zap: RISC-V gives open source instruction set architecture. 
+
+ :zap: ARM X86, AMD X86.
+ 
+
+## :bulb: Importance of ISA
+
+:zap: If different procesing unit has different ISA designed by different companies then complexity increase.
+
+
+ 
+
+
 ## :book: Components of typical SoC
 
 ### :bulb: Processing Units
@@ -186,7 +209,8 @@
 
  :zap: Physical design is very complex and time consuming task. To get required functionality and less error, functional modeling is used before physical design.
 
-    <div align="center">:star::star::star::star::star::star:</div> 
+  <div align="center">:star::star::star::star::star::star:</div> 
+  
 ## :trophy: Level Status: 
 
 - All objectives completed.
