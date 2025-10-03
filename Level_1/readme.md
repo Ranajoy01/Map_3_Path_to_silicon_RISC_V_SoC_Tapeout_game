@@ -91,19 +91,19 @@
 
 ### :bulb: Processing Units
 :zap: <mark>Central Processing Unit (CPU) (Basic unit):</mark>
-   - Usually it is a general purpose processor.
-   - It has general fetch, decode, execute stages.
-   - ALU (arithmetic and logic unit) operations, memory operations are performed by this.
+ - Usually it is a general purpose processor.
+ - It has general fetch, decode, execute stages.
+ - ALU (arithmetic and logic unit) operations, memory operations are performed by this.
      
 :zap: <mark>Graphics Processing unit (GPU) (Special unit):</mark>
-   - Perform graphic rendering and parallel computing task.
-   - Used for Virtual Games,images,videos.
+ - Perform graphic rendering and parallel computing task.
+ - Used for Virtual Games,images,videos.
      
 :zap: <mark>Digial Signal Processor (DSP) (Special unit):</mark>
-   - Optimized processing of digital signals (audio, video, communications).
-   - 
+ - Optimized processing of digital signals (audio, video, communications).
+
 :zap: <mark>AI/ML Accelerators (TPU) (Special unit):</mark>
-   - Optimized processing of neural networks and machine learning tasks.
+ - Optimized processing of neural networks and machine learning tasks.
         
 ---
 
@@ -112,16 +112,16 @@
  Nowdays, Havard architecture is preferred, where program/instruction memory and data memory are different to avoid overwrite issue.
  
  :zap: <mark>On-chip SRAM (Static random access memory):</mark>
-   - Used for cache.
+  - Used for cache.
    
  :zap: <mark>ROM (Read only memory):
-    - For storing boot codes.
+  - For storing boot codes.
     
  :zap: <mark>DRAM controller:</mark>
-    - Interface with external dynamic random access memory.
+  - Interface with external dynamic random access memory.
  
  :zap: <mark>Flash/NVM controller:</mark>
-    - For program and data storage.
+  - For program and data storage.
       
 ---
 
