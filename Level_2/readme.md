@@ -1,1 +1,346 @@
+# Level-2: Practical understanding of BabySoC structure and simulation results
+
+## List of Objectives
+
+- :microscope: <b>Practiccal Objective-1:</b> []()
+- :microscope: <b>Practiccal Objective-2:</b> []()
+- :microscope: <b>Practiccal Objective-3:</b> []()
+ 
+
+ <div align="center">:star::star::star::star::star::star:</div> 
+ 
+## :dart: Lab for introduction to timing.lib
+ ### :microscope: Lab-1: Open the library file , significance of the filename.
+   
+   :zap: Open the `.lib` file using text editor-
+     
+   ```
+   $ gvim sky130_fd_sc_hd__tt_025C_1v80.lib
+   ```
+   ![lib_vim_1](images/lib_vim_1.png)
+   
+   :zap: Go to the command line mode in gvim text editor by pressing `:` -
+
+   - Syntax off-
+   ```
+    :syn off
+   ```
+   - Line numbers-
+   ```
+    :se nu
+   ```
+   ![lib_vim_2](images/lib_vim_2.png)
+   
+   :zap: Significance of the filename-
+
+   - Based on process, voltage and temperature variation cell performance changes.
+   - The performance of cells in `.lib` file are generalized in certain values of these three parameters.
+   - We can observe the parameters in the name of `.lib` file.
+   -  For the `sky130_fd_sc_hd__tt_025C_1v80.lib` file-
+      - Process: `tt` (Typical pocess).
+      - Voltage: `1v80` (1.80 V).
+      - Temparature: `025C` (25 degree celcius).
+   
+  ### :microscope: Lab-2: Observe Cell definition, parameters
+  :zap: Cell names can be seen using the following command-
+   ```
+   /cell+ space key
+   :g//
+   ```
+   ![lib_cell](images/lib_cell.png)
+
+  :zap: Now we can check any cell's line number and go to that cell definition-
+  ```
+  :
+  ```
+  ![lib_cell_1](images/lib_cell_1.png)
+  
+  :zap: Analyze the cell parameters-
+  
+   - There are different leakage power for different input combinations.
+   - Area,power,capacitance are also present in the definition.
+     
+  ### :microscope: Lab-3: Compare area,power of variants of same cell
+  :zap: We have opened three different flavours of same cell using line number-
+  ```
+  :36663
+  :vsp
+  :vsp
+  :36904
+  :37145
+  ```
+  ![cell_comp](images/cell_comp.png)
+  
+   :zap: Compare three cells-
+
+   - `and2_0`,`and2_1`,`and2_2` cells are opened.
+   - Area is increasing from `and2_0` to`and2_2`.
+   - Speed is increasing from `and2_0` to `and2_2`.
+   - Power is increasing from `and2_0` to `and2_2`.
+     
+  <div align="center">:star::star::star::star::star::star:</div> 
+ 
+## :dart: Lab on Hierarchial vs Flatten synthesis
+ ### :microscope: Lab-4: Hierarchial synthesis
+   
+  :zap: Synthesize `multiple_modules.v` as hierarchial-
+     
+   ```
+  $ read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+  $ read_verilog multiple_modules.v
+  $ synth -top multiple_modules
+  ```
+  ![hier_synth_1](images/hier_synth_1.png)
+  
+  ```
+  $ abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+  $ show
+  ```
+  ![hier_synth_2](images/hier_synth_2.png)
+
+  ```
+  $ write_verilog multiple_modules_net.v 
+  ```
+
+   ![hier_net_v](images/hier_net_v.png)
+   
+   ### :microscope: Lab-5: Flat synthesis
+   
+  :zap: Synthesize `multiple_modules.v` as flatten-
+     
+   ```
+  $ read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+  $ read_verilog multiple_modules.v
+  $ synth -top multiple_modules
+  $ abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+  $ flatten
+  $ show
+  ```
+  ![flat_synth_1](images/flat_synth_1.png)
+
+  ```
+  $ write_verilog multiple_modules_flat.v 
+  ```
+
+   ![flat_net](images/flat_net.png)
+   
+ 
+  ### :microscope: Lab-6: Compare hierarchical and flat synthesis
+  :zap: Hierarchial vs Flat netlist
+   ```
+   $ gvim multiple_modules_hier.v
+   :vsp
+   :sp multiple_modules_flat.v
+   :exit
+   ```
+   ![comp_flat_hier](images/comp_flat_hier.png)
+
+  :bulb: Significance of `synth -top`-
+
+  - If a submodule is instantiated multiple times the multiple time synthesis of same submodule is problematic.
+  - We can synthesize submodule one time and use this multiple time.
+  - This is the significance of `synth -top`-
+    
+    ```
+    synth -top `submodule_name`
+    ```
+
+ <div align="center">:star::star::star::star::star::star:</div>   
+  
+## :dart: Labs on flip-flop design,simulation,synthesis and optimization
+ ### :microscope: Lab-7: Analyze different flip-flop designs 
+ 
+   :zap: Open different D flip-flop reset type designs -
+   ```
+   $ gvim dff*syn*s.v -o
+   ```
+   ![dff_res](images/dff_res.png)
+   
+   :zap: Analysis of reset type flip-flop verilog code-
+
+   - D-flipflops ,so `posedge clk` in sensitivity list.
+   - When asynchronous reset high then, output of D flip-flop is set to zero immediately,no change on `clk` edge.
+   - When synchronous reset high then, output of D flip-flop is set to zero on next positive `clk` edge.
+   - For asynchronous reset `posedge reset` in sensitivity list also.
+   - For synchronous reset `posedge clk` in sensitivity list only.
+   - Non-blocking assignments are used inside `always` block.
+     
+  :zap: Open different D flip-flop reset type designs -
+   ```
+   $ gvim dff_async_set.v
+   ```
+        
+   ![dff_set](images/dff_set.png)  
+   
+   :zap: Analysis of reset type flip-flop verilog code-
+
+   - D-flipflops ,so `posedge clk` in sensitivity list.
+   - For asynchronous reset `posedge reset` in sensitivity list also.
+   - When asynchronous eset high then, output of D flip-flop is set to one immediately,no change on `clk` edge.
+   - 
+### :microscope: Lab-8: Simulate different flip-flop designs 
+:zap: Simulate `dff_asyncres.v` using iverilog-
+
+```
+$ iverilog dff_asyncres.v tb_dff_asyncres.v
+$ ./a.out
+$ gtkwave tb_dff_asyncres.vcd
+```
+![w_dff_ares](images/w_dff_ares.png)
+
+:zap: Simulate `dff_syncres.v` using iverilog-
+
+```
+$ iverilog dff_syncres.v tb_dff_syncres.v
+$ ./a.out
+$ gtkwave tb_dff_syncres.vcd
+```
+![w_dff_sres](images/w_dff_sres.png)
+
+:zap: Simulate `dff_async_set.v` using iverilog-
+
+```
+$ iverilog dff_async_set.v tb_dff_async_set.v
+$ ./a.out
+$ gtkwave tb_dff_async_set.vcd
+```
+![w_dff_aset](images/w_dff_aset.png)
+
+### :microscope: Lab-9: Synthesize different flip-flop designs   
+:zap: Synthesize `dff_asyncres.v` using Yosys and SKY130 PDK-
+
+```
+$ yosys
+$ read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+$ read_verilog dff_asyncres.v
+$ synth -top dff_asyncres
+```
+
+![s_dff_ares_1](images/s_dff_ares_1.png)
+
+```
+$ dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+
+![s_dff_ares_2](images/s_dff_ares_2.png)
+
+```
+$ abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+$ show
+```
+
+![s_dff_ares_3](images/s_dff_ares_3.png)
+
+:bulb: In the library D flip-flops has `active low` reset, but we designed `active high` reset. So reset signal is passed through an inverter before connecting to the reset port of D flip-flop.
+
+```
+$ write_verilog -noattr dff_asyncres_net.v
+$ !gvim dff_asyncres_net.v
+```
+
+![s_dff_ares_4](images/s_dff_ares_4.png)
+
+:zap: Synthesize `dff_syncres.v` using Yosys and SKY130 PDK-
+
+```
+$ yosys
+$ read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+$ read_verilog dff_syncres.v
+$ synth -top dff_syncres
+$ dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+$ abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+$ show
+```
+
+![s_dff_sres_1](images/s_dff_sres_1.png)
+
+```
+$ write_verilog -noattr dff_syncres_net.v
+$ !gvim dff_syncres_net.v
+```
+
+![s_dff_sres_2](images/s_dff_sres_2.png)
+
+:zap: Synthesize `dff_async_set.v` using Yosys and SKY130 PDK-
+
+```
+$ yosys
+$ read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+$ read_verilog dff_async_set.v
+$ synth -top dff_async_set
+$ dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+$ abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+$ show
+```
+
+![s_dff_aset_1](images/s_dff_aset_1.png)
+
+```
+$ write_verilog -noattr dff_async_set_net.v
+$ !gvim dff_async_set_net.v
+```
+
+![s_dff_aset_2](images/s_dff_aset_2.png)
+
+### :microscope: Lab-10: Interesting synthesis optimization (No haedware block generate)
+:zap: `mult_2.v` design -
+
+```
+$gvim mult_2.v
+```
+
+![mult_2_des](images/mult_2_des.png)
+
+:zap: Synthesize `mult_2.v` and observe the optimization-
+
+```
+$ yosys
+$ read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+$ read_verilog mult_2.v
+$ synth -top mul2
+$ abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+$ show
+```
+
+![mult_2_synt](images/mult_2_synt.png)
+
+:bulb: No hardware block generated
+
+:bulb: 3 bit number multipliesd with 2 results 4 bit number first three bits from MSB of result is same as 3 bit number and LSB is zero.
+
+:zap: `mult_8.v` design -
+
+```
+$gvim mult_8.v
+```
+
+![mult_8_des](images/mult_8_des.png)
+
+:zap: Synthesize `mult_8.v` and observe the optimization-
+
+```
+$ yosys
+$ read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+$ read_verilog mult_8.v
+$ synth -top mult8
+$ abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+$ show
+```
+
+![mult_8_synt](images/mult_8_synt.png)
+
+:bulb: No hardware block generated.
+
+:bulb: 3 bit number multipliesd with 9 results 6 bit number where the 3 bit number repeats two times.
+
+
+   <div align="center">:star::star::star::star::star::star:</div> 
+   
+## :trophy: Level Status: 
+
+- All objectives completed.
+- I have learned about `.lib`, hierarchial vs flat synthesis , flop design, simulation, synthesis and some interseting optimization.
+- :white_check_mark: Map Completed.
+
+
 
