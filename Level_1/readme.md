@@ -138,11 +138,58 @@
 
       
    <div align="center">:star::star::star::star::star::star:</div> 
-   
+
+## :book: Intoduction to BabySoC : a simplified model of SoC
+
+### :bulb: BabySoC outline
+   - :zap: BabySoC is integration of a `RVMYTH core` , a 10 bit DAC unit and a Phase locked loop (PLL).
+      - `RVMYTH  core` is the CPU designed with RISC-V 32 bit integer Base Instruction Set Architecture (ISA).
+      - A 10 bit DAC is used to convert 10 bit output to analog signal fro external interface.
+      - A PLL is used for stable and accurate high frequency `CLK` generation from source clock. 
+      
+### :bulb: Why simplified
+:zap: It has small instruction and data memory.
+
+:zap: It has a 5 stage pipelined CPU core.
+
+:zap: It has 32 x 32 register file.
+
+:zap: Wordlength is 32 bit.
+
+:zap: RV32I BASE ISA used.
+
+:zap: SoC has only CPU core, DAC, PLL no other external memory or special extension is given.
+
+:zap: It is a very simplifed model interms of integration and simplified base ISA is used.
+
+:zap: Simple program are hardcoded in instruction for easy simulation. Simulation is performed in the next level.
+
+
+ <div align="center">:star::star::star::star::star::star:</div> 
+ 
+## :book: Importance of functional modeling of SoC befor RTL and physical design stages
+
+### :bulb: Functional modeling of SoC
+ :zap: Usually `RVMYTH core` is `digital` circuit, `DAC` and `PLL` are `analog` IPs. 
+ :zap: It is used for behavioral validation.
+ :zap: Non-synthesizable , no hardware generated.
+ :zap: Instruction execution is observed.
+ :zap: High level programming language is used for behavioral modeling.
+ :zap: Untimed behaviour.
+ :zap: Abstract variable instead of registers.
+
+### :bulb: Functional modeling provide faster simulation than RTL modeling.
+
+### :bulb: It is a very good reference against RTL and Physical design verification.
+
+### :bulb: Why Functional modeling before physical design
+    :zap: Physical design is very complex and time consuming task. To get required functionality and less error, functional modeling is used before physical design.
+
+    <div align="center">:star::star::star::star::star::star:</div> 
 ## :trophy: Level Status: 
 
 - All objectives completed.
-- I have learned simulation using iverilog,GTKWave (for timing diagram viewing) and synthesis using Yosys and SKY130 PDK.
-- 🔓 Next level unlocked 🔜 [Level-2(Day-2): Timing libraries,hierarchial vs flat synthesis, efficient flip-flop coding styles](../Level_2/readme.md).
+- I have learned fundamental theories of SoC and BabySoc outline.
+- 🔓 Next level unlocked 🔜 [Level-2(Day-2): Practical understanding of BabySoC structure and simulation results](../Level_2/readme.md).
 
 
