@@ -25,8 +25,9 @@
 ### :bulb: System on Chip (SoC) overview
 
   Here, most or all components of a `computer system`  are integrated into a `single chip`.Basic SoC is made by integating processor, memory, peripheral interface, clock management, power management block onto a silicon die. Others hardware blocks can be integrated into the chip for specialized function. It is used to improve performance, reduce power consumption and physical space. 
+  
+![soc_over/Lvel_1/images/soc_over.png]
 
-    ![soc_over/Lvel_1/images/soc_over.png]
 ---
 ### :white_check_mark: SoC advantages
    - Reduce requirements of external ICs.
