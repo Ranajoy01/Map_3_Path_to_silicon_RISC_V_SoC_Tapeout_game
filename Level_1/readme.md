@@ -223,9 +223,9 @@
 
 :zap: Instruction execution is observed.
 
-:zap: High level programming language is used for behavioral modeling.
+:zap: High level programming language is used for behavioral modeling (algorithmic behaviour).
 
-:zap: Untimed behaviour.
+:zap: Untimed behaviour (not cycle accurate).
 
 :zap: Abstract variable instead of registers.
 
