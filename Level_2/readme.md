@@ -54,9 +54,9 @@
    
   ### :microscope: Convert `rvmyth.tlv` to `rvmyth.v`
   
-  :zap: Install `sandpiper-saas` compiler to convert `.tlv` to `.v`-
+  :dart: Install `sandpiper-saas` compiler to convert `.tlv` to `.v`-
 
-   Virtual environment setup for pip install `sandpiper-saas` in home directory-
+  :zap: Virtual environment setup for pip install `sandpiper-saas` in home directory-
    
    ```
    $ mkdir sandpiper_env
@@ -65,7 +65,7 @@
    ```
    ![venv_1](images/venv_1.png)
    
-   Activate the virtual environment-
+  :zap: Activate the virtual environment-
 
    ```
    $ source venv/bin/activate
@@ -73,7 +73,7 @@
 
   ![venv_2](images/venv_2.png)
 
-  Install `sandpiper-saas`-
+  :zap: Install `sandpiper-saas`-
 
    ```
    $ pip install sandpiper
@@ -81,12 +81,12 @@
 
   ![venv_3](images/venv_3.png)
 
-  Go to working directory-
+  :zap: Go to working directory-
 
   ```
   $ cd ../VSDBabySoC/src/module
   ```
-  :zap: Convert `rvmyth.tlv` to `rvmyth.v`-
+  :dart: Convert `rvmyth.tlv` to `rvmyth.v`-
   
    ```
    $ sandpiper-saas -i rvmyth.tlv -o rvmyth.v
