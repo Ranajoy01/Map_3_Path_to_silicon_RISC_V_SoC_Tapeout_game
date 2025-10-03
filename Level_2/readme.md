@@ -93,7 +93,10 @@
    ```
 
   ![venv_4](images/venv_4.png)
-  
+
+  :bulb: `rvmyth.v` and 'rvmyth_gen.v' files are generated after compilation.
+
+  <div align="center">:star::star::star::star::star::star:</div> 
      
   ### :microscope: Lab-3: Compare area,power of variants of same cell
   :zap: We have opened three different flavours of same cell using line number-
