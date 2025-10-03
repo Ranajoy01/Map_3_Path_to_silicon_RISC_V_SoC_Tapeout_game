@@ -154,11 +154,11 @@
  
   :zap: <mark>Power Management:</mark>
   
-     - Buried rail power supply in transistor level is used to provide efficient power transfer line.
-     - Clock gating is used for preventing leakege power loss.
-     - Voltage regulation and level shifting are used for different block operating in different power supply.
-     - Nowdays dynamic power control is used.
-     
+  - Buried rail power supply in transistor level is used to provide efficient power transfer line.
+  - Clock gating is used for preventing leakege power loss.
+  - Voltage regulation and level shifting are used for different block operating in different power supply.
+  - Nowdays dynamic power control is used.
+  
   :zap: <mark>Synchronization management:</mark>
   
       - Generally sequential logic is used. So,clock is very important.
