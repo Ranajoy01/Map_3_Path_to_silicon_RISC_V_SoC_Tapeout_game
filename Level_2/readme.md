@@ -166,6 +166,7 @@
          OUT = CPU_Xreg_value_a5[17];                
       end
      ```
+   -  `CPU_*_aN` here N signfies the copy of the net at the N<sup>th</sup> pipeline stage.
   
  ---
 
