@@ -92,7 +92,8 @@
 :zap: Open source ISA gives the oppurtunity to design different cores with the same ISA.It ease the design process.
 
  
-
+ <div align="center">:star::star::star::star::star::star:</div> 
+ 
 
 ## :book: Components of typical SoC
 
