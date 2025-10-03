@@ -182,6 +182,7 @@
 
 ### :bulb: BabySoC outline
    :zap: BabySoC is integration of a `RVMYTH core` , a 10 bit DAC unit and a Phase locked loop (PLL).
+   
       - `RVMYTH  core` is the CPU designed with RISC-V 32 bit integer Base Instruction Set Architecture (ISA).
       - A 10 bit DAC is used to convert 10 bit output to analog signal fro external interface.
       - A PLL is used for stable and accurate high frequency `CLK` generation from source clock.
