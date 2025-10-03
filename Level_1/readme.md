@@ -34,7 +34,7 @@
 
   Here, most or all components of a `computer system`  are integrated into a `single chip`.Basic SoC is made by integating processor, memory, peripheral interface, clock management, power management block onto a silicon die. Others hardware blocks can be integrated into the chip for specialized function. It is used to improve performance, reduce power consumption and physical space. 
   
-   ![soc_over](Level_1/images/soc_over.png)
+   ![soc_over](images/soc_over.png)
 
 ---
 ### :white_check_mark: SoC advantages
@@ -81,7 +81,7 @@
 
   :zap: RISC-V gives open source instruction set architecture (RISC signifies reduced instruction set computer). 
 
- ![isa_des](Level_1/images/isa_des.png)
+ ![isa_des](images/isa_des.png)
 
 ## :bulb: Importance of ISA
 
@@ -194,7 +194,7 @@
    - A 10 bit DAC is used to convert 10 bit output to analog signal fro external interface.
    - A PLL is used for stable and accurate high frequency `CLK` generation from source clock.
 
-![babysoc_des](Level_1/images/babysoc_des.png)
+![babysoc_des](images/babysoc_des.png)
 
  ---
       
