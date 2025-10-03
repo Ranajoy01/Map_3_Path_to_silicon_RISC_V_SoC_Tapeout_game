@@ -130,6 +130,7 @@
      - Peripheral component interface express (PCIe).
      - HDMI,MIPI (Camera/display).
      - Universal Asynchronous  receiver and transmitter
+     
     :zap: <mark>Storage interface:</mark>
       - eMMC, UFS, SD card.
       
