@@ -50,24 +50,50 @@
    
    :warning: Here `rvmyth.tlv` can not be compiled using iverilog. 
 
-  ### :microscope: Lab-2: Observe Cell definition, parameters
-  :zap: Cell names can be seen using the following command-
-   ```
-   /cell+ space key
-   :g//
-   ```
-   ![lib_cell](images/lib_cell.png)
+   <div align="center">:star::star::star::star::star::star:</div> 
+   
+  ### :microscope: Convert `rvmyth.tlv` to `rvmyth.v`
+  
+  :zap: Install `sandpiper-saas` compiler to convert `.tlv` to `.v`-
 
-  :zap: Now we can check any cell's line number and go to that cell definition-
+   Virtual environment setup for pip install `sandpiper-saas` in home directory-
+   
+   ```
+   $ mkdir sandpiper_env
+   $ cd sandpiper_env
+   $ python3 -m venv venv 
+   ```
+   ![venv_1](images/venv_1.png)
+   
+   Activate the virtual environment-
+
+   ```
+   $ source venv/bin/activate
+   ```
+
+  ![venv_2](images/venv_2.png)
+
+  Install `sandpiper-saas`-
+
+   ```
+   $ pip install sandpiper
+   ```
+
+  ![venv_3](images/venv_3.png)
+
+  Go to working directory-
+
   ```
-  :
+  $ cd ../VSDBabySoC/src/module
   ```
-  ![lib_cell_1](images/lib_cell_1.png)
+  Convert `rvmyth.tlv` to `rvmyth.v`-
   
-  :zap: Analyze the cell parameters-
+   ```
+   $ sandpiper-saas -i rvmyth.tlv -o rvmyth.v
+   ```
+
+  ![venv_4](images/venv_4.png)
   
-   - There are different leakage power for different input combinations.
-   - Area,power,capacitance are also present in the definition.
      
   ### :microscope: Lab-3: Compare area,power of variants of same cell
   :zap: We have opened three different flavours of same cell using line number-
