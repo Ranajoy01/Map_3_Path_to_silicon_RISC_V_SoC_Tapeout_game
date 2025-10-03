@@ -62,7 +62,7 @@
 ## :book: Components of typical SoC
 
 ### :bulb: Processing Units
-   - :zap: Central Processing Unit (CPU) (Basic unit):
+   - :zap: <mark>Central Processing Unit (CPU) (Basic unit):</mark>
       - Usually it is a general purpose processor.
       - It has general fetch, decode, execute stages.
       - ALU (arithmetic and logic unit) operations, memory operations are performed by this.
