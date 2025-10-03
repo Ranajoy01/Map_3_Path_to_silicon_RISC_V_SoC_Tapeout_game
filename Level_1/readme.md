@@ -15,11 +15,12 @@
 ## :book: Introduction to System on Chip (SoC) 
 
 ### :bulb: Computer system overview
-   - :zap: Any computing system has some basic functions and some specialized functions.
+  :zap: Any computing system has some basic functions and some specialized functions.
       - `Basic functions` are processing , storage, Synchronization managemnet (clock), peripheral interface management , power management.
       - `Specialized functions` communication interface, secure data management, image/video/audio processing.
 
-   - :zap: Generally for high performance computing (Desktop computer) different chips or different hardware blocks are separate entities, these are connected together through wires.
+  :zap: Generally for high performance computing (Desktop computer) different chips or different hardware blocks are separate entities, these are connected together through wires.
+  
 ---
 
 ### :bulb: System on Chip (SoC) overview
@@ -129,15 +130,18 @@
  Digital to analog converter (DAC) and Analog to Digital converter (ADC) are used for interfacing.
  
     :zap: <mark>I/O interfaces:</mark>
+    
      - Universal serial Bus (USB).
      - Peripheral component interface express (PCIe).
      - HDMI,MIPI (Camera/display).
      - Universal Asynchronous  receiver and transmitter
      
     :zap: <mark>Storage interface:</mark>
+    
       - eMMC, UFS, SD card.
       
     :zap: <mark>Serial interface:</mark>
+    
       - Serial peripheral interface (SPI).
       - Controller area network (CAN).
       - Inter integrated circuit (I2C).
