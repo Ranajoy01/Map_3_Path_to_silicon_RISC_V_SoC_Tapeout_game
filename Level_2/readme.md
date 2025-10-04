@@ -297,13 +297,13 @@
 | 3    | ADDI r17,r0,0      | 00000893 |
 | 4    | ADD r17,r17,r11    | 00B888B3 |
 | 5    | ADDI r11,r11,1     | 00158593 |
-| 6    | BNE r11,r10,-8     | FEA59CE3 |
+| 6    | BNE r11,r10,1111111111000    | FEA59CE3 |
 | 7    | ADD r17,r17,r11    | 00B888B3 |
 | 8    | SUB r17,r17,r11    | 40B888B3 |
 | 9    | SUB r11,r11,r9     | 409585B3 |
-| 10   | BNE r11,r9,-8      | FE959CE3 |
+| 10   | BNE r11,r9,1111111111000   | FE959CE3 |
 | 11   | SUB r17,r17,r11    | 40B888B3 |
-| 12   | BEQ r0,r0,-32      | FE0000E3 |
+| 12   | BEQ r0,r0,1111111100000      | FE0000E3 |
 
   
   <div align="center">:star::star::star::star::star::star:</div> 
