@@ -2,9 +2,16 @@
 
 ## List of Objectives
 
-- :microscope: <b>Practical Objective-1:</b> []()
-- :microscope: <b>Practical Objective-2:</b> []()
-- :microscope: <b>Practical Objective-3:</b> []()
+- :microscope: <b>Practical Objective-1:</b> [Setup the directory VSDBabySoC
+](#microscope-setup-the-directory-vsdbabysoc)
+- :microscope: <b>Practical Objective-2:</b> [Convert rvmyth.tlv to rvmyth.v
+](#microscope-convert-rvmythtlv-to-rvmythv)
+- :microscope: <b>Practical Objective-3:</b> [Observe and analyze required verilog files in module directory
+](#microscope-observe-and-analyze-required-verilog-files-in-module-directory-)
+- :microscope: <b>Practical Objective-4:</b> [Simulate vsdbabysoc.v and analyze different signals in hardware blocks of the SoC ](#microscope-simulate-vsdbabysocv-and-analyze-different-signals-in-hardware-blocks-of-the-soc--)
+  - :dart: <b>Subtask-1</b> [Simulate the SoC design using iverilog](#dart-simulate-the-soc-design-using-iverilog-)
+  - :dart: <b>Subtask-2</b> [Analyze reset signal given to rvmyth core and its propagation through pipe;lined stages](#dart-analyze-reset-signal-given-to-rvmyth-core-and-its-propagation-through-pipelined-stages)
+  - :dart: <b>Subtask-3</b> [Analyze clocking signals](#dart-analyze-clocking-signals)
  
 
  <div align="center">:star::star::star::star::star::star:</div> 
