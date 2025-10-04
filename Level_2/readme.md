@@ -318,6 +318,8 @@
 
 :bulb: `ADDI r9,r0,1`  signifies register 0 value (hardwared as zero) and immediate value 1 addition and store the value in register 9.
 
+:warning: Data is shown for first time execution
+
 :bulb: `@0` stage: Fetch the instruction from imem to `CPU_instr_a1[31:0]`.
 
 :bulb: `@1` stage: Decode the instruction. 
@@ -328,11 +330,21 @@
 
 :bulb: `@2` stage: Register file read
 
-   - `CPU_src1_value_a2[31:0]` represent source register.Here r0 is the source register.So, `CPU_src1_value_a2[31:0]` is `00000000`.
-   - Opcode: `13` in hex 5 bit of the 32 bit instruction (starting 2 bits far from LSB) .
-   - Type of immediate: `CPU_is_addi_a1` is 1. So,  it is add immediate type.
+   - `CPU_src1_value_a2[31:0]` represent source register value.Here r0 is the source register.So, `CPU_src1_value_a2[31:0]` is `00000000`.
+   - `CPU_imm_a2[31:0]` signifies immediate value. Here, it is 1.
 
+:bulb: `@3` stage: ALU operation and register file write
 
+   - `CPU_result_a3[31:0]` represent the operation result. r0 value `00000000` and immediate value `00000001` is added. So the result is `00000001`.
+  
+:bulb: `@4` stage and `@5` stage are not important here as no data memory access operation occur in executing this.
+
+<b> `OUT[9:0] from core`:</b>
+:bulb: `OUT[9:0]` is initialized with 17 as `CPU_Xreg_value_a5[17]` is 17.
+  
+<b> `OUT from dac`:</b>
+:bulb: `OUT` is analog signal converted from `OUT[9:0]`.
+  
 
   
   <div align="center">:star::star::star::star::star::star:</div> 
