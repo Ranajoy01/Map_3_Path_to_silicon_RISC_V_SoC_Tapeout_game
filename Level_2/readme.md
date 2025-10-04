@@ -484,6 +484,8 @@ The following waveforms are corresponding to a full cycle of the program (till t
 
 :bulb: Inst-7 to Inst-10 manages this.
 
+:bulb: `RV_TO_DAC[9:0]` 10 bit bus connect `OUT[9:0]` of `rvmyth` to `D[9:0]` of `dac`. So the signal waveforms are same.
+
   <div align="center">:star::star::star::star::star::star:</div> 
    
 ## :trophy: Level Status: 
