@@ -324,7 +324,7 @@
 :bulb: `@1` stage: Decode the instruction. 
 
    - Instruction type: `CPU_is_i_instr_a1` =1
-   - Opcode: `13` in hex 5 bit of the 32 bit instruction (starting 2 bits far from LSB) .
+   - Opcode: `13` in hex 7 bit of the 32 bit instruction (starting from LSB) .
    - Type of immediate: `CPU_is_addi_a1` is 1. So,  it is add immediate type.
 
 :bulb: `@2` stage: Register file read
@@ -363,7 +363,7 @@
 :bulb: `@1` stage: Decode the instruction. 
 
    - Instruction type: `CPU_is_r_instr_a1`=1. So, register type instruction.
-   - Opcode: `13` in hex 5 bit of the 32 bit instruction (starting 2 bits far from LSB) .
+   - Opcode: `13` in hex 7 bit of the 32 bit instruction (starting from LSB) .
    - Type of operation: `CPU_is_add_a1` is 1. So,  it is add register type.
 
 :bulb: `@2` stage: Register file read
@@ -383,6 +383,48 @@
 <b> `OUT from dac`:</b>
 :bulb: `OUT` is analog signal converted from `OUT[9:0]`.
   
+
+---  
+
+:zap: <mark>Inst-6 analysis-</mark>
+
+![inst6](images/inst6.png)
+
+:bulb: `CPU_pc_a0[31:0]` represent the next program counter address.It is 28 in decimal.(current pc 24 in decimal, 32 bit means 4 byte so add 4 to current pc for next instruction starting).
+
+:bulb: `CPU_imem_rd_en_aN `  is enabling signal for the instruction reading from instruction memory in N<sup>th</sup> pipelined stage.
+
+:bulb: `CPU_imem_rd_addr_aN[31:0]` is instruction memory address in N<sup>th</sup> pipelined stage.`CPU_imem_rd_addr_a0[31:0]` is 7 in decimal for `inst-4`.
+
+:bulb: `BNE r11,r10,1111111111000 `  signifies branch with offset -8 (1111111111000 is two's complement form) if r11 and r10 are not equal .
+
+:bulb: `@0` stage: Fetch the instruction from imem to `CPU_instr_a1[31:0]`.
+
+:bulb: `@1` stage: Decode the instruction. 
+
+   - Instruction type: `CPU_is_b_instr_a1`=1. So, `branch` type instruction.
+   - Opcode: `63` in hex 7 bit of the 32 bit instruction (starting  from LSB) .
+   - Type of operation: `CPU_is_add_a1` is 1. So,  it is add register type.
+
+:bulb: `@2` stage: Register file read
+
+   - `CPU_src1_value_a2[31:0]` represent source register-1 value.Here r11 is the source register-1.
+   - `CPU_src2_value_a2[31:0]` represent source register-2 value.Here r10 is the source register-2.
+
+:bulb: `@3` stage: ALU operation and register file write
+
+   - `CPU_taken_br_a3[31:0]` represent if branch taken or not (r11=r10 or not).
+   - `CPU_br_tgt_pc_a3[31:0]` is 16 in decimal. So next instruction will be inst-4.
+  
+:bulb: `@4` stage and `@5` stage are not important here as no data memory access operation occur in executing this.
+
+<b> `OUT[9:0] from core`:</b>
+:bulb: `OUT[9:0]` is 0 for initial case as `CPU_Xreg_value_a5[17]` is 0 (that is register 17).
+  
+<b> `OUT from dac`:</b>
+:bulb: `OUT` is analog signal converted from `OUT[9:0]`.
+  
+
 
   
   <div align="center">:star::star::star::star::star::star:</div> 
