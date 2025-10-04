@@ -308,7 +308,7 @@
 
 ---
 
-:zap: <mark>Inst-0 analysis-</mark>
+:zap: <mark>Inst-0 (00100493) analysis-</mark>
 
 ![inst0](images/inst0.png)
 
@@ -349,7 +349,7 @@
 
 ---  
 
-:zap: <mark>Inst-4 analysis-</mark>
+:zap: <mark>Inst-4 (00B888B3) analysis-</mark>
 
 ![inst4](images/inst4.png)
 
@@ -389,7 +389,7 @@
 
 ---  
 
-:zap: <mark>Inst-6 analysis-</mark>
+:zap: <mark>Inst-6 (FEA59CE3) analysis-</mark>
 
 ![inst6](images/inst6.png)
 
@@ -427,6 +427,12 @@
 <b> `OUT from dac`:</b>
 :bulb: `OUT` is analog signal converted from `OUT[9:0]`.
   
+---
+
+:zap: <mark>Whole program execution analysis overview-</mark>
+
+ 
+
 
 
   
