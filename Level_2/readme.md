@@ -12,6 +12,7 @@
   - :dart: <b>Subtask-1</b> [Simulate the SoC design using iverilog](#dart-simulate-the-soc-design-using-iverilog-)
   - :dart: <b>Subtask-2</b> [Analyze reset signal given to rvmyth core and its propagation through pipe;lined stages](#dart-analyze-reset-signal-given-to-rvmyth-core-and-its-propagation-through-pipelined-stages)
   - :dart: <b>Subtask-3</b> [Analyze clocking signals](#dart-analyze-clocking-signals)
+  - :dart: <b>Subtask-4</b>[Analyze the example program simulation in rvmyth core and dac analog output](#dart-analyze-the-example-program-simulation-in-rvmyth-core-and-dac-analog-output)
  
 
  <div align="center">:star::star::star::star::star::star:</div> 
