@@ -324,6 +324,14 @@
 
    - Instruction type: `CPU_is_i_instr_a1` =1
    - Opcode: `13` in hex 5 bit of the 32 bit instruction (starting 2 bits far from LSB) .
+   - Type of immediate: `CPU_is_addi_a1` is 1. So,  it is add immediate type.
+
+:bulb: `@2` stage: Register file read
+
+   - `CPU_src1_value_a2[31:0]` represent source register.Here r0 is the source register.So, `CPU_src1_value_a2[31:0]` is `00000000`.
+   - Opcode: `13` in hex 5 bit of the 32 bit instruction (starting 2 bits far from LSB) .
+   - Type of immediate: `CPU_is_addi_a1` is 1. So,  it is add immediate type.
+
 
 
   
