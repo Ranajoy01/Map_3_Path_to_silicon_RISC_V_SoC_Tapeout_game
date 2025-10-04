@@ -284,7 +284,7 @@
 ## :trophy: Level Status: 
 
 - All objectives completed.
-- I have learned about `.lib`, hierarchial vs flat synthesis , flop design, simulation, synthesis and some interseting optimization.
+- I have learned about BabySoC, its three components and the signal flow between different modules of SoC during instruction execution. 
 - :white_check_mark: Map Completed.
 
 
