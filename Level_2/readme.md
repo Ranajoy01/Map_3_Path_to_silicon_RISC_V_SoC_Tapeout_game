@@ -213,28 +213,28 @@
 
   :zap: The following nets of `core` under `uut` are selected in gtkwave to analyze the `reset` behaviour-    
   
-        - wire `CLK`  
-        - wire `reset`
-        - wire `CPU_reset_a0`
-        - reg `CPU_reset_a1`
-        - reg `CPU_reset_a2`
-        - reg `CPU_reset_a3`
-        - reg `CPU_reset_a4` 
-        - wire `CPU_pc_a0[31:0]`
-        - reg `CPU_pc_a1[31:0]`
+  - wire `CLK`  
+  - wire `reset`
+  - wire `CPU_reset_a0`
+  - reg `CPU_reset_a1`
+  - reg `CPU_reset_a2`
+  - reg `CPU_reset_a3`
+  - reg `CPU_reset_a4` 
+  - wire `CPU_pc_a0[31:0]`
+  - reg `CPU_pc_a1[31:0]`
 
 
   ![rst_rv_1](images/rst_rv_1.png)
 
   :zap: Analysis-
      
-     :bulb: `CPU_reset_aN` represent `reset state` in N<sup>th</sup> pipelined stage.
+  :bulb: `CPU_reset_aN` represent `reset state` in N<sup>th</sup> pipelined stage.
 
-     :bulb: `CPU_pc_aN[31:0]` represent 32 bit program counter (pc) value in N<sup>th</sup> pipelined stage.
+  :bulb: `CPU_pc_aN[31:0]` represent 32 bit program counter (pc) value in N<sup>th</sup> pipelined stage.
 
-     :bulb: We can observe `CPU_reset_a0` simultaneously changes with  `reset` input.
+  :bulb: We can observe `CPU_reset_a0` simultaneously changes with  `reset` input.
 
-     :bulb: `reset` input is synchronous type reset because `reset` signal make 32 bit PC zero in the next positive edge of `CLK`.
+  :bulb: `reset` input is synchronous type reset because `reset` signal make 32 bit PC zero in the next positive edge of `CLK`.
 
    ---
    
@@ -242,21 +242,21 @@
 
    :zap: The following nets of `core` under `uut` are selected in gtkwave to analyze the `clocking` behaviour-    
   
-        - wire `CLK`  
-        - wire `reset`
-        - reg `CPU_reset_a4` 
-        - wire `CPU_pc_a0[31:0]`
-        - reg `CPU_pc_a1[31:0]`
-        - reg `CPU_pc_a2[31:0]`
-        - reg `CPU_pc_a3[31:0]`
-        - reg `CPU_opcode_a1[6:0]` 
-        - clkP_CPU_dmem_rd_en_a5 
-        - wire `clkP_CPU_rd_valid_a2` 
-        - wire `clkP_CPU_rd_valid_a3` 
-        - wire `clkP_CPU_rd_valid_a4` 
-        - wire `clkP_CPU_rd_valid_a5` 
-        - wire `clkP_CPU_rs1_valid_a2`
-        - wire `clkP_CPU_rs2_valid_a2`
+   - wire `CLK`  
+   - wire `reset`
+   - reg `CPU_reset_a4` 
+   - wire `CPU_pc_a0[31:0]`
+   - reg `CPU_pc_a1[31:0]`
+   - reg `CPU_pc_a2[31:0]`
+   - reg `CPU_pc_a3[31:0]`
+   - reg `CPU_opcode_a1[6:0]` 
+   - clkP_CPU_dmem_rd_en_a5 
+   - wire `clkP_CPU_rd_valid_a2` 
+   - wire `clkP_CPU_rd_valid_a3` 
+   - wire `clkP_CPU_rd_valid_a4` 
+   - wire `clkP_CPU_rd_valid_a5` 
+   - wire `clkP_CPU_rs1_valid_a2`
+   - wire `clkP_CPU_rs2_valid_a2`
 
 
 
