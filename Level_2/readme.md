@@ -305,14 +305,13 @@
 | 11   | SUB r17,r17,r11    | 40B888B3 |
 | 12   | BEQ r0,r0,1111111100000      | FE0000E3 |
 
-:zap: Inst-0 analysis-
+:zap: <mark>Inst-0 analysis-</mark>
 
 ![inst0](images/inst0.png)
 
-:bulb: `CPU_is_*_instr_a1` represent the type of instruction. It is of `immediate` type. So `CPU_is_i_instr_a1` is high only.
+:bulb: `CPU_pc_a0[31:0]` represent the next program counter address.It is 0 in decimal.(reset signal activated in the previous state).
 
 :bulb: `CPU_imem_rd_en_aN `  is enabling signal for the instruction reading from instruction memory in N<sup>th</sup> pipelined stage.`CPU_imem_rd_en_a0` is 1 after reset ends. Then the  instruction is fetched ( `@0` stage).
-
 
 :bulb: `CPU_imem_rd_addr_aN[31:0]` is instruction memory address in N<sup>th</sup> pipelined stage.It is `00000000` in hex for `inst-0`.
 
@@ -336,6 +335,45 @@
 :bulb: `@3` stage: ALU operation and register file write
 
    - `CPU_result_a3[31:0]` represent the operation result. r0 value `00000000` and immediate value `00000001` is added. So the result is `00000001`.
+  
+:bulb: `@4` stage and `@5` stage are not important here as no data memory access operation occur in executing this.
+
+<b> `OUT[9:0] from core`:</b>
+:bulb: `OUT[9:0]` is initialized with 17 as `CPU_Xreg_value_a5[17]` is 17.
+  
+<b> `OUT from dac`:</b>
+:bulb: `OUT` is analog signal converted from `OUT[9:0]`.
+
+---  
+
+:zap: <mark>Inst-4 analysis-</mark>
+
+![inst4](images/inst4.png)
+
+:bulb: `CPU_pc_a0[31:0]` represent the next program counter address.It is 20 in decimal.(current pc 16 in decimal, 32 bit means 4 byte so add 4 to current pc for next instruction starting).
+
+:bulb: `CPU_imem_rd_en_aN `  is enabling signal for the instruction reading from instruction memory in N<sup>th</sup> pipelined stage.
+
+:bulb: `CPU_imem_rd_addr_aN[31:0]` is instruction memory address in N<sup>th</sup> pipelined stage.`CPU_imem_rd_addr_a0[31:0]` is 5 in decimal for `inst-4`.
+
+:bulb: `ADDI r17,r17,r11`  signifies addition of register 17 value and register 11 value and storing the result in register 17.
+
+:bulb: `@0` stage: Fetch the instruction from imem to `CPU_instr_a1[31:0]`.
+
+:bulb: `@1` stage: Decode the instruction. 
+
+   - Instruction type: `CPU_is_r_instr_a1`=1. So, register type instruction.
+   - Opcode: `13` in hex 5 bit of the 32 bit instruction (starting 2 bits far from LSB) .
+   - Type of operation: `CPU_is_add_a1` is 1. So,  it is add register type.
+
+:bulb: `@2` stage: Register file read
+
+   - `CPU_src1_value_a2[31:0]` represent source register-1 value.Here r17 is the source register-1.So, `CPU_src1_value_a2[31:0]` is `00000000`.
+   - `CPU_src2_value_a2[31:0]` represent source register-2 value.Here r11 is the source register-2.So, `CPU_src2_value_a2[31:0]` is `00000000`.
+
+:bulb: `@3` stage: ALU operation and register file write
+
+   - `CPU_result_a3[31:0]` represent the operation result. r17 value `00000000` and r11 value `00000000` is added. So the result is `00000000` (hex).
   
 :bulb: `@4` stage and `@5` stage are not important here as no data memory access operation occur in executing this.
 
