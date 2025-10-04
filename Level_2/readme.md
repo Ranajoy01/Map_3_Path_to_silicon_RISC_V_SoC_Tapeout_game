@@ -207,6 +207,78 @@
 
   ![iv_bs_3](images/iv_bs_3.png)
 
+ ---
+
+  #### :dart: Analyze `reset` signal given to `rvmyth` core and its propagation through pipe;lined stages
+
+  :zap: The following nets of `core` under `uut` are selected in gtkwave to analyze the `reset` behaviour-    
+  
+        - wire `CLK`  
+        - wire `reset`
+        - wire `CPU_reset_a0`
+        - reg `CPU_reset_a1`
+        - reg `CPU_reset_a2`
+        - reg `CPU_reset_a3`
+        - reg `CPU_reset_a4` 
+        - wire `CPU_pc_a0[31:0]`
+        - reg `CPU_pc_a1[31:0]`
+
+
+  ![rst_rv_1](images/rst_rv_1.png)
+
+  :zap: Analysis-
+     
+     :bulb: `CPU_reset_aN` represent `reset state` in N<sup>th</sup> pipelined stage.
+
+     :bulb: `CPU_pc_aN[31:0]` represent 32 bit program counter (pc) value in N<sup>th</sup> pipelined stage.
+
+     :bulb: We can observe `CPU_reset_a0` simultaneously changes with  `reset` input.
+
+     :bulb: `reset` input is synchronous type reset because `reset` signal make 32 bit PC zero in the next positive edge of `CLK`.
+
+   ---
+   
+   #### :dart: Analyze clocking signals
+
+   :zap: The following nets of `core` under `uut` are selected in gtkwave to analyze the `clocking` behaviour-    
+  
+        - wire `CLK`  
+        - wire `reset`
+        - reg `CPU_reset_a4` 
+        - wire `CPU_pc_a0[31:0]`
+        - reg `CPU_pc_a1[31:0]`
+        - reg `CPU_pc_a2[31:0]`
+        - reg `CPU_pc_a3[31:0]`
+        - reg `CPU_opcode_a1[6:0]` 
+        - clkP_CPU_dmem_rd_en_a5 
+        - wire `clkP_CPU_rd_valid_a2` 
+        - wire `clkP_CPU_rd_valid_a3` 
+        - wire `clkP_CPU_rd_valid_a4` 
+        - wire `clkP_CPU_rd_valid_a5` 
+        - wire `clkP_CPU_rs1_valid_a2`
+        - wire `clkP_CPU_rs2_valid_a2`
+
+
+
+  ![clk_rv_1](images/clk_rv_1.png)
+
+  :zap: Analysis-
+
+     :bulb: `CPU_pc_aN[31:0]` represent 32 bit program counter (pc) value in N<sup>th</sup> pipelined stage.
+
+     :bulb: We can observe `CPU_opcode_a1[6:0]` is changed after 1 `CLK` cycle  of `CPU_reset_a4` becoming zero.
+
+     :bulb: `clkP_CPU_rd_valid_aN ` represent the gated clk in N<sup>th</sup> pipelined stage if the `destination register` is valid or not.
+
+     :bulb: `clkP_CPU_rs1_valid_a2 ` or `clkP_CPU_rs2_valid_a2` represent the gated clk in 2<sup>nd</sup> pipelined stage if the `source register` is valid or not in instruction.
+
+     :bulb: The gated clks do not work as intended because in `clk_gate.v` the gated clk directtly follow free clk.
+
+   ![clk_rv_2](images/clk_rv_2.png)
+
+   ---
+   
+  
   <div align="center">:star::star::star::star::star::star:</div> 
    
 ## :trophy: Level Status: 
