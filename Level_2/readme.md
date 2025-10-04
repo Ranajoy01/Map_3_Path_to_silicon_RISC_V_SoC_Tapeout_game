@@ -264,15 +264,15 @@
 
   :zap: Analysis-
 
-     :bulb: `CPU_pc_aN[31:0]` represent 32 bit program counter (pc) value in N<sup>th</sup> pipelined stage.
+  :bulb: `CPU_pc_aN[31:0]` represent 32 bit program counter (pc) value in N<sup>th</sup> pipelined stage.
 
-     :bulb: We can observe `CPU_opcode_a1[6:0]` is changed after 1 `CLK` cycle  of `CPU_reset_a4` becoming zero.
+  :bulb: We can observe `CPU_opcode_a1[6:0]` is changed after 1 `CLK` cycle  of `CPU_reset_a4` becoming zero.
 
-     :bulb: `clkP_CPU_rd_valid_aN ` represent the gated clk in N<sup>th</sup> pipelined stage if the `destination register` is valid or not.
+  :bulb: `clkP_CPU_rd_valid_aN ` represent the gated clk in N<sup>th</sup> pipelined stage if the `destination register` is valid or not.
 
-     :bulb: `clkP_CPU_rs1_valid_a2 ` or `clkP_CPU_rs2_valid_a2` represent the gated clk in 2<sup>nd</sup> pipelined stage if the `source register` is valid or not in instruction.
+  :bulb: `clkP_CPU_rs1_valid_a2 ` or `clkP_CPU_rs2_valid_a2` represent the gated clk in 2<sup>nd</sup> pipelined stage if the `source register` is valid or not in instruction.
 
-     :bulb: The gated clks do not work as intended because in `clk_gate.v` the gated clk directtly follow free clk.
+  :bulb: The gated clks do not work as intended because in `clk_gate.v` the gated clk directtly follow free clk.
 
    ![clk_rv_2](images/clk_rv_2.png)
 
