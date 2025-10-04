@@ -311,11 +311,19 @@
 
 :bulb: `CPU_is_*_instr_a1` represent the type of instruction. It is of `immediate` type. So `CPU_is_i_instr_a1` is high only.
 
+:bulb: `CPU_imem_rd_en_aN `  is enabling signal for the instruction reading from instruction memory in N<sup>th</sup> pipelined stage.`CPU_imem_rd_en_a0` is 1 after reset ends. Then the  instruction is fetched ( `@0` stage).
+
+
 :bulb: `CPU_imem_rd_addr_aN[31:0]` is instruction memory address in N<sup>th</sup> pipelined stage.It is `00000000` in hex for `inst-0`.
 
-:bulb: `ADDI r9,r0,1`  signifies register 0 value (hardwared as zero) and immediate value 1 addition and store the value in register 9.     
+:bulb: `ADDI r9,r0,1`  signifies register 0 value (hardwared as zero) and immediate value 1 addition and store the value in register 9.
 
+:bulb: `@0` stage: Fetch the instruction from imem to `CPU_instr_a1[31:0]`.
 
+:bulb: `@1` stage: Decode the instruction. 
+
+   - Instruction type: `CPU_is_i_instr_a1` =1
+   - Opcode: `13` in hex 5 bit of the 32 bit instruction (starting 2 bits far from LSB) .
 
 
   
