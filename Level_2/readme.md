@@ -305,6 +305,8 @@
 | 11   | SUB r17,r17,r11    | 40B888B3 |
 | 12   | BEQ r0,r0,1111111100000      | FE0000E3 |
 
+---
+
 :zap: <mark>Inst-0 analysis-</mark>
 
 ![inst0](images/inst0.png)
