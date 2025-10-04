@@ -480,7 +480,7 @@ The following waveforms are corresponding to a full cycle of the program (till t
 
 :bulb: Inst-0 to Inst-6 manages this.
 
-:bulb: 946->903->861... decreased like this downto 0. It is 946-(1+1+2+3+...+43).
+:bulb: 946->903->861... decreased like this downto 0. It is 946-(1+2+3+...+43).
 
 :bulb: Inst-7 to Inst-10 manages this.
 
