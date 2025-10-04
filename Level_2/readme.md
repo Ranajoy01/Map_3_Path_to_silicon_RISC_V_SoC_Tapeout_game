@@ -176,7 +176,7 @@
  
   ### :microscope: Simulate `vsdbabysoc.v` and analyze different signals in hardware blocks of the SoC -
   
-  :dart: Simulate the SoC design using iverilog-
+  #### :dart: Simulate the SoC design using iverilog-
 
   :zap: Compile the SoC design using iverilog-
    
