@@ -202,7 +202,7 @@
 ### :bulb: Why simplified
 :zap: It has small instruction and data memory.
 
-:zap: It has a 5 stage pipelined CPU core.
+:zap: It has a 6 stage pipelined CPU core.
 
 :zap: It has 32 x 32 register file.
 
