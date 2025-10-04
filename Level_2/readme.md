@@ -433,6 +433,19 @@
 
 ![pr_cycle](images/pr_cycle.gif)
  
+ - `ADDI r9,r0,1` |00100493| results r9=r0+1 >> r9=1.       
+ - `ADDI r10,r0,101011` | 02B00513 | results r10=r0+101011(binary) >> r10=43(decimal).    
+ - `ADDI r11,r0,0`     | 00000593 | results r11=r0+0 >> r11=0.
+ - `ADDI r17,r0,0`     | 00000893 | resutls r17=r0+0 >> r17=0.
+ - `ADD r17,r17,r11`    | 00B888B3 | results r17=r17+r11 >> r17=43 (decimal)
+ - `ADDI r11,r11,1`     | 00158593 | results r11=r11+1 >> r11=44 (decimal)
+ - `BNE r11,r10,1111111111000 `    | FEA59CE3 | results branch with offset 1111111111000 (-8) if r11 not equal to r10.( r11=44 and r10=43 so   initially take branch )
+ - `ADD r17,r17,r11`    | 00B888B3 | results r17=r17+r11 
+ - `SUB r17,r17,r11`    | 40B888B3 | results r17=r17-r11
+ - `SUB r11,r11,r9`     | 409585B3 | results r11=r11-r9
+ - `BNE r11,r9,1111111111000`  | FE959CE3 |  results branch with offset 1111111111000 (-8) if r11 not equal to r9.
+ - `SUB r17,r17,r11`    | 40B888B3 | results r17=r17-r11
+ - `BEQ r0,r0,-32 `     | FE0000E3 |  results branch with offset 1111111100000  (-32) if r0 equal to r0.Condition is always true. So it causes an infinite loop.
 
 
 
