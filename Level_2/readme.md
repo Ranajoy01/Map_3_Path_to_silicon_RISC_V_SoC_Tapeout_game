@@ -449,6 +449,27 @@ The following waveforms are corresponding to a full cycle of the program (till t
  - `SUB r17,r17,r11`    | 40B888B3 | results r17=r17-r11
  - `BEQ r0,r0,-32 `     | FE0000E3 |  results branch with offset 1111111100000  (-32) if r0 equal to r0.Condition is always true. So it causes an infinite loop.
 
+---
+
+<b>Branching cases</b>
+
+:zap: Inst-6 ( `FEA59CE3`) : If condition true then branch to inst-4 (`00B888B3`) after @3 stage (after two clock cycle).
+
+![br_case1](images/br_case1.png)
+
+:zap: Inst-10 ( `FE959CE3 `) : If condition true then branch to inst-8 (`40B888B3`) after @3 stage (after two clock cycle).
+
+![br_case2](images/br_case2.png)
+
+:zap: Inst-12 ( `FE0000E3`) :  Condition always true, branch to inst-4 (`00B888B3`) after @3 stage (after two clock cycle).
+
+![br_case3](images/br_case3.png)
+
+:bulb: Here instruction become `00000000` (hex) because `CPU_imem_rd_addr_a1[31:0]` value greater than 12 (decimal).
+
+
+ ---
+ 
 <b>Output analysis</b>
 
 :bulb: We can observe from `OUT` real type analog output from `dac` it is increased first from 0 to 0.924 and then decreased to 0.Generally it is in volt. Level shifters are used for achieving different voltage level in practical design.
@@ -463,24 +484,6 @@ The following waveforms are corresponding to a full cycle of the program (till t
 
 :bulb: Inst-7 to Inst-10 manages this.
 
-<b>Branching cases</b>
-
-:zap: Inst-6 ( `FEA59CE3`) : If condition true then branch to inst-4 (`00B888B3`).
-
-![br_case1](images/br_case1.png)
-
-:zap: Inst-10 ( `FE959CE3 `) : If condition true then branch to inst-8 (`40B888B3`).
-
-![br_case2](images/br_case2.png)
-
-:zap: Inst-12 ( `FE0000E3`) :  Condition always true, branch to inst-4 (`00B888B3`).
-
-![br_case3](images/br_case3.png)
-
-:bulb: Here instruction become `00000000` (hex) because `CPU_imem_rd_addr_a1[31:0]` value greater than 12 (decimal).
-
-
-  
   <div align="center">:star::star::star::star::star::star:</div> 
    
 ## :trophy: Level Status: 
